@@ -1,0 +1,29 @@
+[package]
+name = "depscope"
+version = "0.1.0"
+edition = "2021"
+rust-version = "1.74"
+description = "Scope your Rust dependency supply chain: parse Cargo.lock, classify sources, flag risky patterns, and emit an SBOM."
+license = "MIT OR Apache-2.0"
+repository = "https://github.com/sudorm-rf0/depscope"
+homepage = "https://github.com/sudorm-rf0/depscope"
+documentation = "https://github.com/sudorm-rf0/depscope#readme"
+readme = "README.md"
+keywords = ["supply-chain", "security", "cargo", "sbom", "audit"]
+categories = ["command-line-utilities", "development-tools"]
+authors = ["sudorm-rf0"]
+
+[dependencies]
+clap = { version = "4", features = ["derive"] }
+cargo-lock = "10"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+anyhow = "1"
+
+[[bin]]
+name = "depscope"
+path = "src/main.rs"
+
+[lib]
+name = "depscope"
+path = "src/lib.rs"
