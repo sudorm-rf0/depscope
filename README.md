@@ -1,6 +1,20 @@
-# depscope
+<div align="center">
 
-Scope your Rust dependency supply chain from a single `Cargo.lock`.
+# 🔍 depscope
+
+**Scope your Rust dependency supply chain from a single `Cargo.lock`.**
+
+![Rust](https://img.shields.io/badge/Rust-black?logo=rust&logoColor=white)
+![unsafe forbidden](https://img.shields.io/badge/unsafe-forbidden-2ea44f)
+![CycloneDX](https://img.shields.io/badge/CycloneDX-1.5-2ea44f)
+![License](https://img.shields.io/badge/License-MIT%20or%20Apache--2.0-blue)
+
+![GitHub stars](https://img.shields.io/github/stars/sudorm-rf0/depscope)
+![GitHub last commit](https://img.shields.io/github/last-commit/sudorm-rf0/depscope)
+
+</div>
+
+---
 
 `depscope` parses a lockfile into a source-agnostic view and applies a small,
 deterministic set of supply-chain risk heuristics. It is dependency-light,
