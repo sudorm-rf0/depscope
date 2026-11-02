@@ -34,11 +34,28 @@ build — or auditing one — it helps to know:
 `depscope` answers those questions in one command and exits non-zero when a
 CI gate finds something it shouldn't.
 
+## Try it on a real lockfile
+
+You can run the analyzer directly from this repository without installing a global binary or providing any secrets:
+
+```bash
+git clone https://github.com/sudorm-rf0/depscope.git
+cd depscope
+cargo run --locked -- scan Cargo.lock
+cargo run --locked -- risks Cargo.lock
+```
+
+This reads the repository's own lockfile. `risks` reports heuristic signals to investigate; it is **not** a vulnerability advisory database or proof that a dependency is exploitable. Use `check` separately when you intentionally want a nonzero CI gate.
+
 ## Install
 
 ```bash
 cargo install depscope
 ```
+
+Or build from this source checkout with `cargo build --locked --release`. Requires Rust tooling compatible with the `rust-version` declared in [Cargo.toml](Cargo.toml).
+
+[Usage](#usage) · [Risk levels](#risk-levels) · [Source code](src/) · [Report an issue](https://github.com/sudorm-rf0/depscope/issues)
 
 ## Usage
 
